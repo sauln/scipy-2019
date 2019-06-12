@@ -346,151 +346,92 @@ Persistence Diagrams for each group
 class: center, middle
 
 <!-- <img src="images/case_study_ts/full_series.png" width="700px" height="100px"/> -->
-<img src="images/case_study_ts/sliding3.gif" width="550px"/>
+<img src="images/case_study_ts/sliding3.gif" width="100%"/>
 
 ---
 
-class: outline
+class: center, middle, qs
 
-# Scikit-TDA
+## Automatic detection
 
-## What is it?
+<hr>
+<br>
 
-## Highly open source
+**Divergence of distances?**
 
-## Highly collaborative
+**Changes in persistent entropy?**
 
-## Highly documented
-
-## Used!
-
----
-
-## What is it?
-
-<br><br>
-
-.center[
-| Ripser.py | Kepler Mapper | Persim | Cechmate | TaDAsets |
-|---|---|---|---|---|
-| .smallimg[![Ripser logo](images/logo/ripser.png)] | .smallimg[![Kepler Mapper logo](images/logo/kepler-mapper.png)] | .smallimg[![Persim logo](images/logo/persim.png)] | .smallimg[![Cechmate logo](images/logo/cechmate.png)] | .smallimg[![tadasets logo](images/logo/tadasets.png)] |
-]
+**IDK**
 
 ---
 
-## Highly open source
+class: center, middle
 
-.fit[![Screenshot of scikit-tda github](images/scikit/scikit-tda-github.png)]
+## Max bar
 
----
-
-## Highly documented
-
-.fit[![Screenshot of scikit-tda website](images/scikit/scikit-tda-website.png)]
+<img src="images/case_study_ts/max_bar_canvas.png" width="100%"/>
 
 ---
 
-## Highly collaborative
+class: center, middle
 
-.center[
-| .smallfixed[![alpatania](images/contributors/alpatania.jpg)] | .smallfixed[![arfon](images/contributors/arfon.jpg)] | .smallfixed[![blasern](images/contributors/blasern.png)] | .smallfixed[![chparsons](images/contributors/chparsons.jpg)] | .smallfixed[![ctralie](images/contributors/ctralie.jpg)] | .smallfixed[![ubauer](images/contributors/ubauer.png)] |.smallfixed[![retdop](images/contributors/retdop.png)] |
-|---|---|---|---|---|---|
-| .smallfixed[![deargle](images/contributors/deargle.jpg)] | .smallfixed[![emerson-escolar](images/contributors/emerson-escolar.png)] | .smallfixed[![empet](images/contributors/empet.jpg)] | .smallfixed[![galtay](images/contributors/galtay.jpg)] | .smallfixed[![joperea](images/contributors/joperea.png)] | .smallfixed[![trainorpj](images/contributors/trainorpj.jpg)] | .smallfixed[![eduph](images/contributors/eduPH.jpg)] |
-| .smallfixed[![karinsasaki](images/contributors/karinsasaki.png)] | .smallfixed[![leouieda](images/contributors/leouieda.jpg)] | .smallfixed[![michiexile](images/contributors/michiexile.jpg)] | .smallfixed[![MLWave](images/contributors/MLWave.png)] | .smallfixed[![moh3th1](images/contributors/moh3th1.png)] |.smallfixed[![tmelorc](images/contributors/tmelorc.png)] |.smallfixed[![cmorph1](images/contributors/cmorph1.jpg)] |
-| .smallfixed[![mtsch](images/contributors/mtsch.jpg)] | .smallfixed[![outlace](images/contributors/outlace.jpg)] | .smallfixed[![rannbaron](images/contributors/rannbaron.png)] | .smallfixed[![Roj](images/contributors/Roj.jpg)] | .smallfixed[![smangham](images/contributors/smangham.jpg)] | ||
-]
+## Persistent entropy
+
+<img src="images/case_study_ts/persistent_entropy.png" width="60%"/>
+
+(provably better stability properties, but IDK how it's calculated)
 
 ---
 
-## Persistent Homology with Ripser.py
+class: center, middle
 
-Very fast for point clouds
+## Wasserstein distances
 
-```Python
-from ripser import Rips
-
-rip = Rips()
-diagrams = rip.fit_transform(data)
-rip.plot(diagrams)
-```
+<img src="images/case_study_ts/wasserstein_comparison.png" width="100%"/>
 
 ---
 
-## Flexible diagrams with Cechmate
+class: center, middle
 
-```Python
-import cechmate
+## Wasserstein distance curve
 
-cech = cechmate.Cech()
-rips = cechmate.Rips()
-alpha = cechmate.Alpha()
-jaccard = cechmate.Cover()
-extended = cechmate.Extended.from_kmapper(mapper)
-```
+Comparing first diagram to subsequence diagrams using Wasserstein distance
 
-Pretty much the same API for all of them:
-
-```Python
-jaccard.build(data)
-diagrams = jaccard.diagrams()
-jaccard.plot(diagrams)
-```
+<img src="images/case_study_ts/wasser_curve.png" width="60%"/>
 
 ---
 
-background-image: url(images/mapper/breast-cancer.png)
+class: center, middle
 
-## Mapper with Kepler Mapper
+## Wasserstien distance matrix
 
-```Python
-from kmapper import KeplerMapper
-km = KeplerMapper()
-lens = km.fit_transform(data, projection=[0])
-graph = km.map(lens, data)
-km.visualize()
-```
+<img src="images/case_study_ts/wasser_dm.png" width="60%"/>
 
 ---
 
-## datasets with TaDAsets
+class: center, middle
 
-```Python
-import tadasets
+## Bottleneck distances
 
-loop = tadasets.dsphere(d=1, n=2000, noise=0.1)
-sphere = tadasets.dsphere(d=2, n=1000)
-torus = tadasets.torus(n=1000, ambient=100)
-swiss_roll = tadasets.swiss_roll(n=1000, r=25)
-```
-
-.cols[
-.thirty[
-.center[.fit[![points sampled on a loop](images/generated/loop.png)]]
-]
-.thirty[
-.center[.fit[![points sampled on a sphere](images/generated/sphere.png)]]
-]
-.thirty[
-.center[.fit[![points sampled on a torus](images/generated/torus.png)]]
-]
-]
+<img src="images/case_study_ts/bottleneck_comparison.png" width="100%"/>
 
 ---
 
-## distances with Persim
+class: center, middle
 
-```Python
-import persim
+## Bottleneck curve
 
-dx = persim.heat(diagramA, diagramB)
-dx = persim.bottleneck(diagramA, diagramB)
-dx = persim.sliced_wasserstein(diagramA, diagramB)
-ims = persim.PersImage().fit_transform(diagrams)
-```
+Comparing first diagram to subsequent
 
-.center[
-.fullsize[![Persistence images of fake datasets](images/persim_classification.png)]
-]
+<img src="images/case_study_ts/bottleneck_curve.png" width="60%"/>
+
+---
+
+class: center, middle
+
+## Bottleneck distance matrix
+
+<img src="images/case_study_ts/bottleneck_dm.png" width="60%"/>
 
 ---
 
@@ -499,19 +440,51 @@ class: center, middle, qs
 
 # Questions?
 
-## Thank you!
+<hr>
 
--- Christopher Tralie
+.cols[
+.thirty[
+<br>
+
+### Learn more
+
+]
+.thirty[
 
 <br>
 
-.center[
-<i class="fab fa-twitter"></i> <br>
-@scikit_tda <br>
-@NathanielSaul
-
-<i class="fas fa-globe"></i> <br>
-scikit-tda.org
+&#10132;
 ]
 
+.thirty[
+<i class="fab fa-slack"></i><br>
+@nriverasaul
+
+<i class="fas fa-globe"></i> <br>
+www.scikit-tda.org
+]
+
+]
+
+<hr>
+
 <br>
+ Thank you to &#9734; Christopher Tralie &#9734;
+
+---
+
+class: outline
+
+# References
+
+All code and data to replicate what is shown here:
+
+- [source.github.com/insights/data-driven-exploration/TDAtimeseries](https://source.datanerd.us/insights/data-driven-exploration/blob/master/TDAtimeseries/TDA%20of%20Timeseries.ipynb)
+
+Embedding technique:
+
+- (Quasi)Periodicity Quantification in Video Data, Using Topology, Christopher J. Tralie, Jose A. Perea, https://arxiv.org/abs/1704.08382
+
+All TDA libraries used are part of Scikit-TDA:
+
+- [www.scikit-tda.org](https://www.scikit-tda.org)
