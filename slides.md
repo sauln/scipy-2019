@@ -27,9 +27,7 @@ class: center, middle, qs
 
 **Persistent Homology**
 
-**Case Study**
-
-**Timeseries Anomaly Detection**
+**Anomaly Detection**
 
 ---
 
@@ -83,6 +81,8 @@ class: center, middle
 .center[zero dimensional holes]
 
 ---
+
+class: center
 
 ## High dimensional holes
 
@@ -144,6 +144,8 @@ tinyurl.com/cech-playground
 
 ---
 
+class: center
+
 ## Persistent homology
 
 .center[
@@ -153,6 +155,8 @@ tinyurl.com/cech-playground
 .footnote[Image credit Robert Ghrist]
 
 ---
+
+class: center
 
 ## Persistence diagrams
 
@@ -178,6 +182,18 @@ class: center, middle, qs
 
 ## Automatic anomaly detection
 
+Sliding window embedding
+
+Persistent homology of embedding
+
+Comparison of Persistence diagrams
+
+---
+
+class: center, middle
+
+Real New Relic data
+
 <img src="images/case_study_ts/chart-builder-series.png" width="100%"/>
 
 Can we tell when this periodic signal _falls apart_?
@@ -188,11 +204,11 @@ class: center, middle
 
 ## Compute period size
 
-<!-- <img src="images/case_study_ts/full_series.png" width="100%"/> -->
-
 <img src="images/case_study_ts/sliding_peaks.png" width="50%"/>
 
-<img src="images/case_study_ts/sliding_buckets.png" width="100%"/>
+<img src="images/case_study_ts/sliding_buckets.png" width="90%"/>
+
+Autocorrelation curve
 
 ---
 
@@ -216,6 +232,8 @@ class: center, middle
 
 <img src="images/sliding_window/out.gif" width="100%"/>
 
+.footnote[Gif credit Chris Tralie]
+
 ---
 
 class: center, middle
@@ -225,6 +243,8 @@ class: center, middle
 ---
 
 class: center, middle
+
+# Comparison
 
 ## Max bar
 
