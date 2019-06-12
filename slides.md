@@ -6,11 +6,11 @@ class: center, middle, borderless
 
 # TDA of timeseries
 
-### A introduction and case study of Topological Data Analysis.
+An introduction and case study.
 
 <p class="smallish">
 <b>Nathaniel Rivera Saul</b><br>
-.smallish[New Relic Unconf<br>June 13th 2019]
+.smallish[New Relic ML Unconf<br>June 13th 2019]
 </p>
 
 ---
@@ -21,32 +21,32 @@ class: center, middle, qs
 
 # Topological Data Analysis
 
-**What is topology?**
+**Topology**
 
 **Persistent Homology**
-
-~~**Mapper**~~
 
 <br>
 # Case Study
 
-**Anomaly Detection**
+**Timeseries Anomaly Detection**
 
 ---
 
-# What is Topology?
+class: center, middle
 
-.center[
-*Something about* **donuts** *and* **coffee cups**?
-]
+## Topology
+
+_Something about_ **donuts** _and_ **coffee cups**?
 
 ![Chief Wiggum from the Simpsons](images/Chief_Wiggum.png)
 
 ---
 
-## What is Topology?
+class: center, middle
 
-.center[study of shape, holes, and connectivity.
+## Topology
+
+.center[study of _shape_, **holes**, and **_connectivity_**.
 
 .fit[![Donut to coffee cup transition by Henry Segerman](images/segerman.png)]
 ]
@@ -55,16 +55,17 @@ class: center, middle, qs
 
 ---
 
-## What is Topological Data Analysis?
+class: center, middle
 
-.center[
-apply these theories to high dimensional point cloud data
+## Topological Data Analysis
 
-.fit[
-![Image of annulus and data sampled on annulus.](images/generated/circles.png)]
-]
+<img src="images/generated/circles.png" width="100%">
+<br>
+Adapt topology to point cloud data.
 
 ---
+
+class: center, middle
 
 ## Clustering is TDA!
 
@@ -278,8 +279,9 @@ Window size of 30 &rarr; 30 dimensional space.
 Slide window length 30 over series.
 
 Each window becomes 30-D vector.
+<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
 
-.footnote[please let me know if you have a nice way of visualizing this.]
+.footnote[Image credit Jose Perea.]
 
 ---
 
@@ -289,6 +291,8 @@ class: center, middle
 
 <img src="images/case_study_ts/series_ph.png" width="100%"/>
 
+.footnote[Projection with PCA]
+
 ---
 
 class: center, middle
@@ -297,23 +301,24 @@ class: center, middle
 
 <img src="images/case_study_ts/spike_ph.png" width="100%"/>
 
----
-
-class: center
-
-# Woah those look pretty different to me.
-
-<img src="images/case_study_ts/series_ph.png" width="60%"/>
-
-<img src="images/case_study_ts/spike_ph.png" width="60%"/>
+.footnote[Projection with PCA]
 
 ---
 
 class: center
 
-But looks aren't everything.
+<img src="images/case_study_ts/series_ph.png" width="70%"/>
 
-Can't we automatically tell if they are different?
+<img src="images/case_study_ts/spike_ph.png" width="70%"/>
+
+---
+
+class: center
+
+# Distances between diagrams
+
+<img src="images/case_study_ts/spike_was.png" width="45%"/>
+<img src="images/case_study_ts/spike_bottleneck.png" width="45%"/>
 
 ---
 
@@ -323,30 +328,30 @@ class: center, middle, qs
 
 <hr>
 
-## Change detection
+## Automatic detection
 
 <img src="images/case_study_ts/chart-builder-series.png" width="100%"/>
 
-Can we tell this periodic signal _fell apart_?
+Can we tell when this periodic signal _falls apart_?
 
 ---
 
 class: center, middle
 
-<img src="images/case_study_ts/full_series.png" width="100%"/>
+## Compute period size
 
-Detect length period
+<!-- <img src="images/case_study_ts/full_series.png" width="100%"/> -->
 
-Embed 10 periods
+<img src="images/case_study_ts/sliding_peaks.png" width="50%"/>
 
-Persistence Diagrams for each group
+<img src="images/case_study_ts/sliding_buckets.png" width="100%"/>
 
 ---
 
 class: center, middle
 
 <!-- <img src="images/case_study_ts/full_series.png" width="700px" height="100px"/> -->
-<img src="images/case_study_ts/sliding3.gif" width="100%"/>
+<img src="images/case_study_ts/sliding5.gif" width="95%"/>
 
 ---
 
@@ -357,11 +362,9 @@ class: center, middle, qs
 <hr>
 <br>
 
-**Divergence of distances?**
+**Measures on diagrams**
 
-**Changes in persistent entropy?**
-
-**IDK**
+**Distances on diagrams**
 
 ---
 
@@ -375,19 +378,12 @@ class: center, middle
 
 class: center, middle
 
-## Persistent entropy
-
-<img src="images/case_study_ts/persistent_entropy.png" width="60%"/>
-
-(provably better stability properties, but IDK how it's calculated)
-
----
-
-class: center, middle
-
 ## Wasserstein distances
 
-<img src="images/case_study_ts/wasserstein_comparison.png" width="100%"/>
+<img src="images/case_study_ts/wasserstein_comparison.png" width="70%"/><br>
+<img src="images/case_study_ts/frames/frame3_signal.png" width="45%"/><br>
+<img src="images/case_study_ts/frames/frame5_signal.png" width="45%"/>
+<img src="images/case_study_ts/frames/frame8_signal.png" width="45%"/>
 
 ---
 
@@ -417,28 +413,10 @@ class: center, middle
 
 ---
 
-class: center, middle
-
-## Bottleneck curve
-
-Comparing first diagram to subsequent
-
-<img src="images/case_study_ts/bottleneck_curve.png" width="60%"/>
-
----
-
-class: center, middle
-
-## Bottleneck distance matrix
-
-<img src="images/case_study_ts/bottleneck_dm.png" width="60%"/>
-
----
-
 name: questions
 class: center, middle, qs
 
-# Questions?
+Thank you to &#9734; Chris Tralie &#9734;
 
 <hr>
 
@@ -469,7 +447,8 @@ www.scikit-tda.org
 <hr>
 
 <br>
- Thank you to &#9734; Christopher Tralie &#9734;
+
+# Questions?
 
 ---
 
