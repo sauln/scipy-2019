@@ -285,7 +285,10 @@ class: center, middle
 
 ## Bottleneck distances
 
-<img src="images/case_study_ts/bottleneck_comparison.png" width="100%"/>
+<img src="images/case_study_ts/bottleneck_comparison.png" width="70%"/>
+<img src="images/case_study_ts/frames/frame3_signal.png" width="45%"/><br>
+<img src="images/case_study_ts/frames/frame5_signal.png" width="45%"/>
+<img src="images/case_study_ts/frames/frame8_signal.png" width="45%"/>
 
 ---
 
