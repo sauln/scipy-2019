@@ -112,44 +112,6 @@ lots of combinations
 
 ---
 
-class: center, middle, qs
-
-# Persistent Homology
-
-<hr>
-
-**Simplicial Complexes**
-
-**Homology**
-
-**Persistence & Filtrations**
-
-**Persistent Homology & Diagrams**
-
----
-
-class: center
-
-## Simplicial Complexes
-
-.center[
-.fitheight[![points sampled on a loop](images/ph/simpcom.png)]
-]
-
-.footnote[Image credit wikipedia?]
-
----
-
-class: center
-
-## Compute homology
-
-Count the k-**cycles** that are not **boundaries** of k+1-cycles
-
-.fitheight[![points sampled on a loop](images/ph/homology-of-complex.jpg)]
-
----
-
 class: center
 
 ## Data &rarr; Complex
@@ -166,9 +128,19 @@ class: center
 
 class: center, middle
 
-# One radius can be misleading
+## One radius can be misleading
 
 <img src="images/ph/cech-radius-canvas.png" width="100%">
+
+---
+
+class: center, middle
+
+## Look at entire sequence of radii
+
+<img src="images/ph/sizing_playground.gif" width="100%">
+
+tinyurl.com/cech-playground
 
 ---
 
@@ -306,24 +278,11 @@ class: center, middle, qs
 
 <hr>
 
-## Automatic anomoly detection
+## Automatic anomaly detection
 
 <img src="images/case_study_ts/chart-builder-series.png" width="100%"/>
 
 Can we tell when this periodic signal _falls apart_?
-
----
-
-class: center, middle
-
-Window size of 3 &rarr; 3 dimensional space.
-
-Slide window length 3 over series.
-
-Each window becomes 3-D vector.
-<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
-
-.footnote[Image credit Jose Perea.]
 
 ---
 
@@ -336,6 +295,28 @@ class: center, middle
 <img src="images/case_study_ts/sliding_peaks.png" width="50%"/>
 
 <img src="images/case_study_ts/sliding_buckets.png" width="100%"/>
+
+---
+
+class: center, middle
+
+# Sliding window embedding
+
+Window size of 3 &rarr; 3 dimensional space.
+
+Each window becomes 3-D vector.
+
+<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
+
+.footnote[Image credit Jose Perea.]
+
+---
+
+class: center, middle
+
+# Sliding window embedding
+
+<img src="images/sliding_window/out.gif" width="100%"/>
 
 ---
 
@@ -382,7 +363,7 @@ class: center, middle
 
 ## Wasserstein distance curve
 
-Comparing first diagram to subsequence diagrams using Wasserstein distance
+Comparing 1st diagram to subsequent diagrams using Wasserstein distance
 
 <img src="images/case_study_ts/wasser_curve.png" width="60%"/>
 
@@ -458,8 +439,3 @@ Embedding technique:
 All TDA libraries used are part of Scikit-TDA:
 
 - [www.scikit-tda.org](https://www.scikit-tda.org)
-
-* tinyurl.com/cech-playground
-  .center[
-  <img src="images/ph/cech-playground.png" width="50%">
-  ]
