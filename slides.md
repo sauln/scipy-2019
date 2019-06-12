@@ -19,14 +19,15 @@ class: center, middle, qs
 
 <!-- Topological Data Analysis is a new field of applicable mathematics gaining attention in the world of data science. This talk will introduce everything TDA working from holes and nerves to persistence. We'll then explore an application of TDA to time series analysis using new open source tools.  -->
 
-# Topological Data Analysis
+# Outline
+
+<hr>
 
 **Topology**
 
 **Persistent Homology**
 
-<br>
-# Case Study
+**Case Study**
 
 **Timeseries Anomaly Detection**
 
@@ -117,8 +118,6 @@ class: center, middle, qs
 
 <hr>
 
-<br>
-
 **Simplicial Complexes**
 
 **Homology**
@@ -173,14 +172,6 @@ class: center, middle
 
 ---
 
-class: center, middle
-
-# tinyurl.com/cech-playground
-
-<img src="images/ph/cech-playground.png" width="100%">
-
----
-
 ## Persistent homology
 
 .center[
@@ -205,7 +196,7 @@ class: center, middle
 ]
 ]
 
----
+<!-- ---
 
 class: center, middle, qs
 
@@ -219,17 +210,17 @@ class: center, middle, qs
 
 **Spike detection**
 
-**Change detection**
+**Change detection** -->
 
----
+<!-- ---
 
 class: center, middle
 
 Collect data with chart builder
 
-<img src="images/case_study_ts/chart-builder-spike.png" width="100%"/>
+<img src="images/case_study_ts/chart-builder-spike.png" width="100%"/> -->
 
----
+<!-- ---
 
 class: center, middle
 
@@ -237,9 +228,9 @@ Can we use TDA to detect this spike?
 
 <img src="images/case_study_ts/just_series.png" width="100%"/>
 
-<img src="images/case_study_ts/just_series_spike.png" width="100%"/>
+<img src="images/case_study_ts/just_series_spike.png" width="100%"/> -->
 
----
+<!-- ---
 
 class: center, middle, qs
 
@@ -252,38 +243,25 @@ class: center, middle, qs
 
 **Construct sliding window embedding for normal wave and spike**
 
-**Compare Persistence Diagrams of both embedding**
+**Compare Persistence Diagrams of both embedding** -->
 
----
+<!-- ---
 
 class: center, middle
 
 Compute period from autocorrelation curve
 
-<img src="images/case_study_ts/autocorrelation_spike.png" width="100%"/>
+<img src="images/case_study_ts/autocorrelation_spike.png" width="60%"/>
 
----
+<img src="images/case_study_ts/window-overlay.png" width="100%"/> -->
 
-class: center, middle
-
-Pretty okay automatic identification ¯\\\_(ツ)\_/¯
-
-<img src="images/case_study_ts/window-overlay.png" width="100%"/>
-
----
+<!-- ---
 
 class: center, middle
 
-Window size of 30 &rarr; 30 dimensional space.
+Pretty okay automatic identification ¯\\\_(ツ)\_/¯ -->
 
-Slide window length 30 over series.
-
-Each window becomes 30-D vector.
-<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
-
-.footnote[Image credit Jose Perea.]
-
----
+<!-- ---
 
 class: center, middle
 
@@ -291,9 +269,9 @@ class: center, middle
 
 <img src="images/case_study_ts/series_ph.png" width="100%"/>
 
-.footnote[Projection with PCA]
+.footnote[Projection with PCA] -->
 
----
+<!-- ---
 
 class: center, middle
 
@@ -301,24 +279,24 @@ class: center, middle
 
 <img src="images/case_study_ts/spike_ph.png" width="100%"/>
 
-.footnote[Projection with PCA]
+.footnote[Projection with PCA] -->
 
----
+<!-- ---
 
 class: center
 
 <img src="images/case_study_ts/series_ph.png" width="70%"/>
 
-<img src="images/case_study_ts/spike_ph.png" width="70%"/>
+<img src="images/case_study_ts/spike_ph.png" width="70%"/> -->
 
----
+<!-- ---
 
 class: center
 
 # Distances between diagrams
 
 <img src="images/case_study_ts/spike_was.png" width="45%"/>
-<img src="images/case_study_ts/spike_bottleneck.png" width="45%"/>
+<img src="images/case_study_ts/spike_bottleneck.png" width="45%"/> -->
 
 ---
 
@@ -328,11 +306,24 @@ class: center, middle, qs
 
 <hr>
 
-## Automatic detection
+## Automatic anomoly detection
 
 <img src="images/case_study_ts/chart-builder-series.png" width="100%"/>
 
 Can we tell when this periodic signal _falls apart_?
+
+---
+
+class: center, middle
+
+Window size of 3 &rarr; 3 dimensional space.
+
+Slide window length 3 over series.
+
+Each window becomes 3-D vector.
+<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
+
+.footnote[Image credit Jose Perea.]
 
 ---
 
@@ -353,7 +344,7 @@ class: center, middle
 <!-- <img src="images/case_study_ts/full_series.png" width="700px" height="100px"/> -->
 <img src="images/case_study_ts/sliding5.gif" width="95%"/>
 
----
+<!-- ---
 
 class: center, middle, qs
 
@@ -364,7 +355,7 @@ class: center, middle, qs
 
 **Measures on diagrams**
 
-**Distances on diagrams**
+**Distances on diagrams** -->
 
 ---
 
@@ -467,3 +458,8 @@ Embedding technique:
 All TDA libraries used are part of Scikit-TDA:
 
 - [www.scikit-tda.org](https://www.scikit-tda.org)
+
+* tinyurl.com/cech-playground
+  .center[
+  <img src="images/ph/cech-playground.png" width="50%">
+  ]
