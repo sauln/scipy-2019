@@ -4,13 +4,13 @@ class: center, middle, borderless
 <img src="images/banner.jpg" alt="abstract rips complex">
 </div>
 
-# TDA of timeseries
+# Scikit-TDA
 
-An introduction and case study.
+Topological Data Analysis for the Python ecosystem.
 
 <p class="smallish">
 <b>Nathaniel Rivera Saul</b><br>
-.smallish[New Relic ML Unconf<br>June 13th 2019]
+.smallish[Scipy<br>July 2019]
 </p>
 
 ---
