@@ -15,9 +15,38 @@ Topological Data Analysis for the Python ecosystem.
 
 ---
 
-class: center, middle, qs
+# Changes
 
-<!-- Topological Data Analysis is a new field of applicable mathematics gaining attention in the world of data science. This talk will introduce everything TDA working from holes and nerves to persistence. We'll then explore an application of TDA to time series analysis using new open source tools.  -->
+- add back in an introduction of scikit-tda.
+- add code snippets for all scikit-tda related code.
+- trim down most of the time series analysis.
+- Add a brief (2 slides) on using persistence images with classification.
+
+---
+
+# Context
+
+- Previously: Lots of different tools. Large amount of overlap. Completely different APIs. Nontrivial overlap.
+
+- Scikit-TDA offers easy installation. 
+<!-- We've done our best to make it very easy for people to get started experimenting with the methods.  -->
+
+``` Python
+pip install sktda
+```
+
+- Scikit-TDA offers easy contributions. 
+<!-- We've done our best to be responsive and welcoming to community contributions -->
+
+    - Show all the images of peoples avatars 
+
+- Scikit-TDA offeres *almost* all the major algorithms in TDA
+
+    - Show all the libraries' logos.
+
+---
+
+class: center, middle, qs
 
 # Outline
 
@@ -27,17 +56,9 @@ class: center, middle, qs
 
 **Persistent Homology**
 
+**Feature engineering**
+
 **Anomaly Detection**
-
----
-
-class: center, middle
-
-## Topology
-
-_Something about_ **donuts** _and_ **coffee cups**?
-
-![Chief Wiggum from the Simpsons](images/Chief_Wiggum.png)
 
 ---
 
@@ -112,11 +133,18 @@ lots of combinations
 
 ---
 
-class: center
+class: center, middle, qs
 
-## Data &rarr; Complex
+### 
+
+<hr>
+
+## Persistent Homology
+
+
 
 ---
+
 
 class: center
 
@@ -156,6 +184,87 @@ class: center
 
 ---
 
+
+# Fundamental examples
+
+.cols[
+.thirty[
+
+]
+.thirty[
+``` Python
+loop = tadasets.dsphere(d=1)
+dgms = ripser(loop)
+persim.plot_diagrams(dgms)
+```
+]
+.thirty[
+
+]
+]
+
+.center[
+<img src="images/generated/loop.png" width="340px">
+<img src="images/generated/loop_pd.png" width="340px">
+]
+---
+
+
+# Fundamental examples
+
+.cols[
+.thirty[
+
+]
+.thirty[
+``` Python
+sphere = tadasets.dsphere(d=2)
+dgms = ripser(sphere)
+persim.plot_diagrams(dgms)
+```
+]
+.thirty[
+
+]
+]
+
+.center[
+<img src="images/generated/sphere.png" width="340px">
+<img src="images/generated/sphere_pd.png" width="340px">
+]
+
+---
+
+
+
+# Fundamental examples
+
+.cols[
+.thirty[
+
+]
+.thirty[
+``` Python
+torus = tadasets.torus()
+dgms = ripser(torus)
+persim.plot_diagrams(dgms)
+```
+]
+.thirty[
+
+]
+]
+
+
+.center[
+<img src="images/generated/torus.png" width="340px">
+<img src="images/generated/torus_pd.png" width="340px">
+]
+
+
+---
+
+
 class: center
 
 ## Persistence diagrams
@@ -172,6 +281,7 @@ class: center
 ]
 ]
 
+
 ---
 
 class: center, middle, qs
@@ -180,7 +290,7 @@ class: center, middle, qs
 
 <hr>
 
-## Automatic anomaly detection
+## Anomaly detection
 
 Sliding window embedding
 
@@ -192,9 +302,11 @@ Comparison of Persistence diagrams
 
 class: center, middle
 
-Real New Relic data
+## Time series data
 
-<img src="images/case_study_ts/chart-builder-series.png" width="100%"/>
+<img src="images/case_study_ts/full_series.png" width="100%"/>
+
+<small> Average duration of web transactions aggregated over ~5 seconds.</small>
 
 Can we tell when this periodic signal _falls apart_?
 
@@ -202,15 +314,15 @@ Can we tell when this periodic signal _falls apart_?
 
 class: center, middle
 
-## Compute period size
+## Preprocessing
 
-<img src="images/case_study_ts/sliding_peaks.png" width="50%"/>
-
-<img src="images/case_study_ts/sliding_buckets.png" width="90%"/>
-
+<img src="images/case_study_ts/sliding_peaks.png" width="40%"/><br>
 Autocorrelation curve
 
----
+<img src="images/case_study_ts/sliding_buckets.png" width="90%"/><br>
+Periods found from peak 
+
+<!-- ---
 
 class: center, middle
 
@@ -222,7 +334,7 @@ Each window becomes 3-D vector.
 
 <img src="images/case_study_ts/embedding_parea.png" width="100%"/>
 
-.footnote[Image credit Jose Perea.]
+.footnote[Image credit Jose Perea.] -->
 
 ---
 
@@ -238,17 +350,12 @@ class: center, middle
 
 class: center, middle
 
-<img src="images/case_study_ts/sliding5.gif" width="95%"/>
+``` Python
+diagrams = Rips().fit_transform(embedding)
+persim.plot_diagrams(diagrams)
+```
 
----
-
-class: center, middle
-
-# Comparison
-
-## Max bar
-
-<img src="images/case_study_ts/max_bar_canvas.png" width="100%"/>
+<img src="images/case_study_ts/sliding5.gif" width="70%"/>
 
 ---
 
@@ -256,39 +363,57 @@ class: center, middle
 
 ## Wasserstein distances
 
-<img src="images/case_study_ts/wasserstein_comparison.png" width="70%"/><br>
-<img src="images/case_study_ts/frames/frame3_signal.png" width="45%"/><br>
-<img src="images/case_study_ts/frames/frame5_signal.png" width="45%"/>
-<img src="images/case_study_ts/frames/frame8_signal.png" width="45%"/>
+``` Python
+d = persim.wasserstein(diagram3, diagram5)
+```
+
+<img src="images/case_study_ts/wasserstein_comparison.png" width="60%"/><br>
+<img src="images/case_study_ts/frames/frame3_signal.png" width="40%"/><br>
+<img src="images/case_study_ts/frames/frame5_signal.png" width="40%"/>
+<img src="images/case_study_ts/frames/frame8_signal.png" width="40%"/>
+
+
+
 
 ---
 
-class: center, middle
+class: center, middle, qs
 
-## Wasserstein distance curve
+### Case study
 
-Comparing 1st diagram to subsequent diagrams using Wasserstein distance
+<hr>
 
-<img src="images/case_study_ts/wasser_curve.png" width="60%"/>
+## Classification
+
+Level set persistence
+
+Persistence images
+
+Classification algorithms
+
 
 ---
 
-class: center, middle
+# Sprint
 
-## Wasserstien distance matrix
+- Help with conda-forge packaging
+- 
 
-<img src="images/case_study_ts/wasser_dm.png" width="60%"/>
 
-<!-- ---
+---
 
-class: center, middle
+# Next time
 
-## Bottleneck distances
+- Lots of other methods (mapper, sheaves, and more)
 
-<img src="images/case_study_ts/bottleneck_comparison.png" width="70%"/>
-<img src="images/case_study_ts/frames/frame3_signal.png" width="45%"/><br>
-<img src="images/case_study_ts/frames/frame5_signal.png" width="45%"/>
-<img src="images/case_study_ts/frames/frame8_signal.png" width="45%"/> -->
+
+---
+
+# Thank you
+
+- Chris Tralie
+- Leland McInnes
+- 
 
 ---
 
@@ -334,10 +459,6 @@ www.scikit-tda.org
 class: outline
 
 # References
-
-All code and data to replicate what is shown here:
-
-- [source.github.com/insights/data-driven-exploration/TDAtimeseries](https://source.datanerd.us/insights/data-driven-exploration/blob/master/TDAtimeseries/TDA%20of%20Timeseries.ipynb)
 
 Embedding technique:
 
