@@ -89,7 +89,7 @@ class: center, middle, qs
 
 **Topological Data Analysis**
 
-**Basic Examples**
+**Controlled Examples**
 
 **Anomaly Detection**
 
@@ -214,14 +214,14 @@ class: center, middle, qs
 
 ~~**Topological Data Analysis**~~
 
-**Basic Examples**
+**Controlled Examples**
 
 **Anomaly Detection**
 
 
 ---
 
-# Basic Examples
+# Constrolled Examples
 
 .cols[
 .thirty[
@@ -246,7 +246,7 @@ persim.plot_diagrams(dgms)
 ---
 
 
-# Fundamental examples
+# Controlled examples
 
 .cols[
 .thirty[
@@ -273,7 +273,7 @@ persim.plot_diagrams(dgms)
 
 
 
-# Fundamental examples
+# Controlled examples
 
 .cols[
 .thirty[
@@ -303,7 +303,7 @@ persim.plot_diagrams(dgms)
 
 class: center
 
-## Persistence diagrams
+## Comparison
 
 .cols[
 .thirty[
@@ -318,6 +318,16 @@ class: center
 ]
 
 
+
+---
+
+class: center
+
+# Comparison
+
+- Show distances between multiple diagrams
+- Show distances with varying levels of noise.
+
 ---
 
 class: center, middle, qs
@@ -328,7 +338,7 @@ class: center, middle, qs
 
 ~~**Topological Data Analysis**~~
 
-~~**Basic Examples**~~
+~~**Controlled Examples**~~
 
 **Anomaly Detection**
 
@@ -443,19 +453,22 @@ Persistence images
 Classification algorithms -->
 
 
----
-
-# Sprint
-
-- Help with conda-forge packaging
-- 
-
 
 ---
 
 # Next time
 
-- Lots of other methods (mapper, sheaves, and more)
+- Persistence images
+- TDA of machine learning
+- Mapper and Sheaves
+
+---
+
+# Sprint
+
+- Help with conda-forge packaging
+- Help with automated builds
+
 
 
 ---
@@ -464,7 +477,6 @@ Classification algorithms -->
 
 - Chris Tralie
 - Leland McInnes
-- 
 
 ---
 
