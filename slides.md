@@ -5,9 +5,7 @@ class: center, middle, borderless
 </div>
 
 # Scikit-TDA
-
 Topological Data Analysis for the Python ecosystem.
-
 <p class="smallish">
 <b>Nathaniel Rivera Saul</b><br>
 .smallish[Scipy<br>July 2019]
@@ -15,35 +13,72 @@ Topological Data Analysis for the Python ecosystem.
 
 ---
 
-# Changes
+# Preface
 
-- add back in an introduction of scikit-tda.
-- add code snippets for all scikit-tda related code.
-- trim down most of the time series analysis.
-- Add a brief (2 slides) on using persistence images with classification.
+- Before Scikit-TDA 
+    - Lots of different tools. 
+    - Large amounts of feature overlap. 
+    - Small amounts of interoperability.
+
+- After Scikit-TDA
+    - Lots of different tools + 1 more.
+
+- Our objectives
+    - Curate implementations rather than building new ones.
+    - Build something that was easy to use. 
+    - Build something people could contribute to.
 
 ---
 
-# Context
+# Preface
 
-- Previously: Lots of different tools. Large amount of overlap. Completely different APIs. Nontrivial overlap.
 
-- Scikit-TDA offers easy installation. 
-<!-- We've done our best to make it very easy for people to get started experimenting with the methods.  -->
+.cols[
+.fifty[
+- Easy installation. 
 
+- Lots of documentation.
+
+- Easy to contribute.
+
+] 
+
+.fifty[
 ``` Python
 pip install sktda
 ```
 
-- Scikit-TDA offers easy contributions. 
-<!-- We've done our best to be responsive and welcoming to community contributions -->
+``` Python
+www.scikit-tda.org
+```
 
-    - Show all the images of peoples avatars 
+``` Python
+www.github.com/scikit-tda
+```
+]
+]
 
-- Scikit-TDA offeres *almost* all the major algorithms in TDA
 
-    - Show all the libraries' logos.
 
+
+
+
+
+
+
+---
+
+class: center, middle
+
+# Preface
+
+.center[
+| .smallfixed[![alpatania](images/contributors/alpatania.jpg)] | .smallfixed[![arfon](images/contributors/arfon.jpg)] | .smallfixed[![blasern](images/contributors/blasern.png)] | .smallfixed[![chparsons](images/contributors/chparsons.jpg)] | .smallfixed[![ctralie](images/contributors/ctralie.jpg)] | .smallfixed[![ubauer](images/contributors/ubauer.png)] |.smallfixed[![retdop](images/contributors/retdop.png)] |
+|---|---|---|---|---|---|
+| .smallfixed[![deargle](images/contributors/deargle.jpg)] | .smallfixed[![emerson-escolar](images/contributors/emerson-escolar.png)] | .smallfixed[![empet](images/contributors/empet.jpg)] | .smallfixed[![galtay](images/contributors/galtay.jpg)] | .smallfixed[![joperea](images/contributors/joperea.png)] | .smallfixed[![trainorpj](images/contributors/trainorpj.jpg)] | .smallfixed[![eduph](images/contributors/eduPH.jpg)] |
+| .smallfixed[![karinsasaki](images/contributors/karinsasaki.png)] | .smallfixed[![leouieda](images/contributors/leouieda.jpg)] | .smallfixed[![michiexile](images/contributors/michiexile.jpg)] | .smallfixed[![MLWave](images/contributors/MLWave.png)] | .smallfixed[![moh3th1](images/contributors/moh3th1.png)] |.smallfixed[![tmelorc](images/contributors/tmelorc.png)] |.smallfixed[![cmorph1](images/contributors/cmorph1.jpg)]  |
+| .smallfixed[![mtsch](images/contributors/mtsch.jpg)] | .smallfixed[![outlace](images/contributors/outlace.jpg)] | .smallfixed[![rannbaron](images/contributors/rannbaron.png)] | .smallfixed[![Roj](images/contributors/Roj.jpg)] | .smallfixed[![smangham](images/contributors/smangham.jpg)] | ||
+]
 ---
 
 class: center, middle, qs
@@ -52,11 +87,9 @@ class: center, middle, qs
 
 <hr>
 
-**Topology**
+**Topological Data Analysis**
 
-**Persistent Homology**
-
-**Feature engineering**
+**Basic Examples**
 
 **Anomaly Detection**
 
@@ -103,7 +136,7 @@ class: center, middle
 
 ---
 
-class: center
+class: center, middle
 
 ## High dimensional holes
 
@@ -131,22 +164,11 @@ lots of combinations
 ]
 ]
 
----
-
-class: center, middle, qs
-
-### 
-
-<hr>
-
-## Persistent Homology
-
-
 
 ---
 
 
-class: center
+class: center, middle
 
 ## Data &rarr; Complex
 
@@ -184,8 +206,22 @@ class: center
 
 ---
 
+class: center, middle, qs
 
-# Fundamental examples
+# Outline
+
+<hr>
+
+~~**Topological Data Analysis**~~
+
+**Basic Examples**
+
+**Anomaly Detection**
+
+
+---
+
+# Basic Examples
 
 .cols[
 .thirty[
@@ -286,6 +322,21 @@ class: center
 
 class: center, middle, qs
 
+# Outline
+
+<hr>
+
+~~**Topological Data Analysis**~~
+
+~~**Basic Examples**~~
+
+**Anomaly Detection**
+
+
+<!-- ---
+
+class: center, middle, qs
+
 ### Case study
 
 <hr>
@@ -296,7 +347,7 @@ Sliding window embedding
 
 Persistent homology of embedding
 
-Comparison of Persistence diagrams
+Comparison of Persistence diagrams -->
 
 ---
 
@@ -375,7 +426,7 @@ d = persim.wasserstein(diagram3, diagram5)
 
 
 
----
+<!-- ---
 
 class: center, middle, qs
 
@@ -389,7 +440,7 @@ Level set persistence
 
 Persistence images
 
-Classification algorithms
+Classification algorithms -->
 
 
 ---
@@ -428,19 +479,14 @@ Thank you to &#9734; Chris Tralie &#9734;
 .thirty[
 <br>
 
-### Learn more
+### Learn more &#10132;
 
 ]
-.thirty[
 
-<br>
 
-&#10132;
-]
-
-.thirty[
+.fifty[
 <i class="fab fa-slack"></i><br>
-@nriverasaul
+tinyurl.com/scikit-tda-slack
 
 <i class="fas fa-globe"></i> <br>
 www.scikit-tda.org
@@ -464,6 +510,10 @@ Embedding technique:
 
 - (Quasi)Periodicity Quantification in Video Data, Using Topology, Christopher J. Tralie, Jose A. Perea, https://arxiv.org/abs/1704.08382
 
-All TDA libraries used are part of Scikit-TDA:
+Beautiful diagram of the persistence barcode
 
-- [www.scikit-tda.org](https://www.scikit-tda.org)
+- R. Ghrist, “Barcodes: The persistent topology of data,” Bulletin-American Mathematical Society 45, 1-15 (2008). [PDF in AMS](http://www.ams.org/journals/bull/2008-45-01/S0273-0979-07-01191-3/S0273-0979-07-01191-3.pdf)
+
+Notebooks to reproduce case study
+
+- [www.github.com/sauln/scipy-2019](www.github.com/sauln/scipy-2019)
