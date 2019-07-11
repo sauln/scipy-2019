@@ -7,4 +7,8 @@
 *.out
 *.synctex.gz
 .DS_Store
-venv
+venv__pycache__
+.vscode
+__pycache__/
+.ipynb_checkpoints/
+venv/

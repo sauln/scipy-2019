@@ -70,6 +70,8 @@ p {
   font-size: 1.4em;
 }
 
+
+
 .banner img {
   width: 130%;
 }
@@ -114,6 +116,10 @@ p {
   position: absolute;
   bottom: 10px;
   left: 20px;
+}
+
+.small .remark-code {
+  font-size: 0.7em;
 }
 
 .small {

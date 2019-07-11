@@ -13,7 +13,9 @@ Topological Data Analysis for the Python ecosystem.
 
 ---
 
-# Preface
+class: outline
+
+# Prologue
 
 - Before Scikit-TDA 
     - Lots of different tools. 
@@ -21,7 +23,7 @@ Topological Data Analysis for the Python ecosystem.
     - Small amounts of interoperability.
 
 - After Scikit-TDA
-    - Lots of different tools + 1 more.
+    - Lots of different tools + 1.
 
 - Our objectives
     - Curate implementations rather than building new ones.
@@ -30,7 +32,8 @@ Topological Data Analysis for the Python ecosystem.
 
 ---
 
-# Preface
+
+# Goals
 
 
 .cols[
@@ -41,6 +44,7 @@ Topological Data Analysis for the Python ecosystem.
 
 - Easy to contribute.
 
+- and Stickers!
 ] 
 
 .fifty[
@@ -57,8 +61,7 @@ www.github.com/scikit-tda
 ```
 ]
 ]
-
-
+.fit[![](images/sticker.jpeg)]
 
 
 
@@ -69,8 +72,6 @@ www.github.com/scikit-tda
 ---
 
 class: center, middle
-
-# Preface
 
 .center[
 | .smallfixed[![alpatania](images/contributors/alpatania.jpg)] | .smallfixed[![arfon](images/contributors/arfon.jpg)] | .smallfixed[![blasern](images/contributors/blasern.png)] | .smallfixed[![chparsons](images/contributors/chparsons.jpg)] | .smallfixed[![ctralie](images/contributors/ctralie.jpg)] | .smallfixed[![ubauer](images/contributors/ubauer.png)] |.smallfixed[![retdop](images/contributors/retdop.png)] |
@@ -164,9 +165,7 @@ lots of combinations
 ]
 ]
 
-
 ---
-
 
 class: center, middle
 
@@ -218,10 +217,9 @@ class: center, middle, qs
 
 **Anomaly Detection**
 
-
 ---
 
-# Constrolled Examples
+# Controlled Examples
 
 .cols[
 .thirty[
@@ -246,7 +244,7 @@ persim.plot_diagrams(dgms)
 ---
 
 
-# Controlled examples
+# Controlled Examples
 
 .cols[
 .thirty[
@@ -273,7 +271,7 @@ persim.plot_diagrams(dgms)
 
 
 
-# Controlled examples
+# Controlled Examples
 
 .cols[
 .thirty[
@@ -298,7 +296,7 @@ persim.plot_diagrams(dgms)
 ]
 
 
----
+<!-- ---
 
 
 class: center
@@ -315,18 +313,35 @@ class: center
 .thirty[
 .center[.fit[![points sampled on a torus](images/generated/torus.png)]<br>.fit[![points sampled on a torus](images/generated/torus_pd.png)]]
 ]
-]
+] -->
 
 
 
 ---
 
-class: center
-
 # Comparison
+.cols[
+.thirty[
+![](images/loops_lots.png)
+]
+.fifty[
+![](images/loops_diagrams.png)
 
-- Show distances between multiple diagrams
-- Show distances with varying levels of noise.
+
+.small[
+``` Python
+sphere = tadasets.dsphere(n=1000, d=1, noise=0.1)
+dgms = ripser.ripser(sphere, maxdim=1)['dgms']
+d, (mi, D) = wasserstein.wasserstein(dgms[1], dgms[1], matching=True)
+persim.wasserstein_matching(dgms[1], dgms[1], mi)
+```
+]
+]
+]
+  
+
+
+
 
 ---
 
@@ -412,7 +427,7 @@ class: center, middle
 class: center, middle
 
 ``` Python
-diagrams = Rips().fit_transform(embedding)
+diagrams = ripser(embedding)
 persim.plot_diagrams(diagrams)
 ```
 
@@ -452,65 +467,53 @@ Persistence images
 
 Classification algorithms -->
 
-
-
 ---
 
-# Next time
+class: outline
 
-- Persistence images
-- TDA of machine learning
-- Mapper and Sheaves
+# Epilogue
 
----
+- Next time
+    - Mapper
+    - UMAP
+    - TDA of machine learning
 
-# Sprint
+- Sprint on Saturday
+    - Let's get Scikit-TDA on Conda-Forge!
+    - Let's automate the release process!
 
-- Help with conda-forge packaging
-- Help with automated builds
+- Thank you
+    - Chris Tralie
+    - Leland McInnes
+    - All your lovely faces
 
-
-
----
-
-# Thank you
-
-- Chris Tralie
-- Leland McInnes
 
 ---
 
 name: questions
 class: center, middle, qs
 
-Thank you to &#9734; Chris Tralie &#9734;
+
+<br>
+# Questions?
+<br>
 
 <hr>
 
-.cols[
-.thirty[
-<br>
-
-### Learn more &#10132;
-
-]
 
 
-.fifty[
 <i class="fab fa-slack"></i><br>
 tinyurl.com/scikit-tda-slack
 
 <i class="fas fa-globe"></i> <br>
 www.scikit-tda.org
-]
 
-]
-
+<i class="fab fa-twitter"></i><br>
+@scikit_tda
 <hr>
 
-<br>
 
-# Questions?
+
 
 ---
 
@@ -518,14 +521,13 @@ class: outline
 
 # References
 
-Embedding technique:
-
-- (Quasi)Periodicity Quantification in Video Data, Using Topology, Christopher J. Tralie, Jose A. Perea, https://arxiv.org/abs/1704.08382
-
-Beautiful diagram of the persistence barcode
-
-- R. Ghrist, “Barcodes: The persistent topology of data,” Bulletin-American Mathematical Society 45, 1-15 (2008). [PDF in AMS](http://www.ams.org/journals/bull/2008-45-01/S0273-0979-07-01191-3/S0273-0979-07-01191-3.pdf)
-
-Notebooks to reproduce case study
-
-- [www.github.com/sauln/scipy-2019](www.github.com/sauln/scipy-2019)
+- Notebooks to reproduce case study
+    - [www.github.com/sauln/scipy-2019](www.github.com/sauln/scipy-2019)
+- Čech Nerve Playground
+    - [tinyurl.com/cech-playground](tinyurl.com/cech-playground)
+- Embedding technique
+    - (Quasi)Periodicity Quantification in Video Data, Using Topology, Christopher J. Tralie, Jose A. Perea, https://arxiv.org/abs/1704.08382
+- Beautiful diagram of the persistence barcode
+    - R. Ghrist, “Barcodes: The persistent topology of data,” Bulletin-American Mathematical Society 45, 1-15 (2008). [PDF in AMS](http://www.ams.org/journals/bull/2008-45-01/S0273-0979-07-01191-3/S0273-0979-07-01191-3.pdf)
+- Sliding window Gif
+    - [Chris Tralie's website!]
