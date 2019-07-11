@@ -32,9 +32,7 @@ class: outline
 
 ---
 
-
 # Goals
-
 
 .cols[
 .fifty[
@@ -43,8 +41,6 @@ class: outline
 - Lots of documentation.
 
 - Easy to contribute.
-
-- and Stickers!
 ] 
 
 .fifty[
@@ -61,6 +57,8 @@ www.github.com/scikit-tda
 ```
 ]
 ]
+
+.center[and stickers!]
 .fit[![](images/sticker.jpeg)]
 
 
@@ -289,33 +287,10 @@ persim.plot_diagrams(dgms)
 ]
 ]
 
-
 .center[
 <img src="images/generated/torus.png" width="340px">
 <img src="images/generated/torus_pd.png" width="340px">
 ]
-
-
-<!-- ---
-
-
-class: center
-
-## Comparison
-
-.cols[
-.thirty[
-.center[.fit[![points sampled on a loop](images/generated/loop.png)]<br>.fit[![points sampled on a loop](images/generated/loop_pd.png)]]
-]
-.thirty[
-.center[.fit[![points sampled on a sphere](images/generated/sphere.png)]<br>.fit[![points sampled on a sphere](images/generated/sphere_pd.png)]]
-]
-.thirty[
-.center[.fit[![points sampled on a torus](images/generated/torus.png)]<br>.fit[![points sampled on a torus](images/generated/torus_pd.png)]]
-]
-] -->
-
-
 
 ---
 
@@ -327,21 +302,17 @@ class: center
 .fifty[
 ![](images/loops_diagrams.png)
 
-
 .small[
 ``` Python
 sphere = tadasets.dsphere(n=1000, d=1, noise=0.1)
 dgms = ripser.ripser(sphere, maxdim=1)['dgms']
-d, (mi, D) = wasserstein.wasserstein(dgms[1], dgms[1], matching=True)
-persim.wasserstein_matching(dgms[1], dgms[1], mi)
+d, (mi, D) = persim.wasserstein(dgms[1], dgms_noise[1], matching=True)
+persim.wasserstein_matching(dgms[1], dgms_noise[1], mi)
 ```
 ]
 ]
 ]
   
-
-
-
 
 ---
 
@@ -358,22 +329,6 @@ class: center, middle, qs
 **Anomaly Detection**
 
 
-<!-- ---
-
-class: center, middle, qs
-
-### Case study
-
-<hr>
-
-## Anomaly detection
-
-Sliding window embedding
-
-Persistent homology of embedding
-
-Comparison of Persistence diagrams -->
-
 ---
 
 class: center, middle
@@ -382,9 +337,9 @@ class: center, middle
 
 <img src="images/case_study_ts/full_series.png" width="100%"/>
 
-<small> Average duration of web transactions aggregated over ~5 seconds.</small>
+<small>Average duration of web transactions</small>
 
-Can we tell when this periodic signal _falls apart_?
+Can we tell when this periodicity changes?
 
 ---
 
@@ -396,21 +351,8 @@ class: center, middle
 Autocorrelation curve
 
 <img src="images/case_study_ts/sliding_buckets.png" width="90%"/><br>
-Periods found from peak 
+Estimated periods good enough 
 
-<!-- ---
-
-class: center, middle
-
-# Sliding window embedding
-
-Window size of 3 &rarr; 3 dimensional space.
-
-Each window becomes 3-D vector.
-
-<img src="images/case_study_ts/embedding_parea.png" width="100%"/>
-
-.footnote[Image credit Jose Perea.] -->
 
 ---
 
@@ -426,12 +368,16 @@ class: center, middle
 
 class: center, middle
 
+Embed 8 periods at a time
+
 ``` Python
 diagrams = ripser(embedding)
 persim.plot_diagrams(diagrams)
 ```
 
 <img src="images/case_study_ts/sliding5.gif" width="70%"/>
+
+
 
 ---
 
@@ -449,31 +395,13 @@ d = persim.wasserstein(diagram3, diagram5)
 <img src="images/case_study_ts/frames/frame8_signal.png" width="40%"/>
 
 
-
-
-<!-- ---
-
-class: center, middle, qs
-
-### Case study
-
-<hr>
-
-## Classification
-
-Level set persistence
-
-Persistence images
-
-Classification algorithms -->
-
 ---
 
 class: outline
 
 # Epilogue
 
-- Next time
+- Next time - Many more methods
     - Mapper
     - UMAP
     - TDA of machine learning
@@ -481,6 +409,7 @@ class: outline
 - Sprint on Saturday
     - Let's get Scikit-TDA on Conda-Forge!
     - Let's automate the release process!
+    - Let's add a barcode visualization!
 
 - Thank you
     - Chris Tralie
@@ -499,8 +428,6 @@ class: center, middle, qs
 <br>
 
 <hr>
-
-
 
 <i class="fab fa-slack"></i><br>
 tinyurl.com/scikit-tda-slack
@@ -530,4 +457,4 @@ class: outline
 - Beautiful diagram of the persistence barcode
     - R. Ghrist, “Barcodes: The persistent topology of data,” Bulletin-American Mathematical Society 45, 1-15 (2008). [PDF in AMS](http://www.ams.org/journals/bull/2008-45-01/S0273-0979-07-01191-3/S0273-0979-07-01191-3.pdf)
 - Sliding window Gif
-    - [Chris Tralie's website!]
+    - [http://www.ctralie.com/](http://www.ctralie.com/)
