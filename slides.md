@@ -3,13 +3,18 @@ class: center, middle, borderless
 <div class="banner">
 <img src="images/banner.jpg" alt="abstract rips complex">
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 # Scikit-TDA
 Topological Data Analysis for the Python ecosystem.
 <p class="smallish">
 <b>Nathaniel Rivera Saul</b><br>
-.smallish[Scipy<br>July 2019]
+.smallish[Scipy July 2019]
+.footnotemiddle[sauln.github.io/scipy-2019]
+
 </p>
+
+
 
 ---
 
@@ -423,9 +428,7 @@ name: questions
 class: center, middle, qs
 
 
-<br>
 # Questions?
-<br>
 
 <hr>
 
@@ -437,9 +440,11 @@ www.scikit-tda.org
 
 <i class="fab fa-twitter"></i><br>
 @scikit_tda
+
+<i class="far fa-file-powerpoint"></i><br>
+sauln.github.io/scipy-2019
+
 <hr>
-
-
 
 
 ---
@@ -448,8 +453,6 @@ class: outline
 
 # References
 
-- Notebooks to reproduce case study
-    - [www.github.com/sauln/scipy-2019](www.github.com/sauln/scipy-2019)
 - Čech Nerve Playground
     - [tinyurl.com/cech-playground](tinyurl.com/cech-playground)
 - Embedding technique
